@@ -1,10 +1,11 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "./ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "./ui/form";
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -38,36 +39,44 @@ const SignIn = () => {
       </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="group relative mb-6">
-            <label
-              htmlFor="id"
-              className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50"
-            >
-              Email Address
-            </label>
-            <Input
-              id="id"
-              className="h-10"
-              placeholder="Enter email address"
-              type="email"
-            />
-          </div>
-          <div className="group relative mb-4">
-            <label
-              htmlFor="id"
-              className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50"
-            >
-              Password
-            </label>
-            <Input
-              id="id"
-              className="h-10"
-              placeholder="Enter password"
-              type="password"
-            />
-          </div>
-          <Button variant="outline" className="bg-[#CBCBCB] text-white w-full ">
-            Login
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="group relative mb-6">
+                <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
+                  Email Address
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    className="h-10"
+                    placeholder="Enter email address"
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem className="group relative mb-6">
+                <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
+                  password
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    className="h-10"
+                    placeholder="Enter password"
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full bg-[#CBCBCB]">
+            Submit
           </Button>
         </form>
       </Form>
