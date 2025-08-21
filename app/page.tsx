@@ -1,10 +1,11 @@
-import Welcome from "@/components/Welcome";
+import SignIn from "@/components/SignIn";
 
 const page = () => {
   return (
     <>
-      
-      <Welcome />
+      <SignIn />
+
+      {/* <Welcome /> */}
     </>
   );
 };
