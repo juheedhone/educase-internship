@@ -1,9 +1,11 @@
 import SignIn from "@/components/SignIn";
+import SignUp from "@/components/SignUp";
 
 const page = () => {
   return (
     <>
-      <SignIn />
+      {/* <SignIn /> */}
+    <SignUp/>
 
       {/* <Welcome /> */}
     </>
