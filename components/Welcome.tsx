@@ -8,12 +8,12 @@ const Welcome = () => {
       <p className="mb-[29px] text-lg opacity-60 max-w-[232px]">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       </p>
-      <Button className="text-white cursor-pointer mb-2.5 h-[2.875rem]">
+      <Button className="text-white cursor-pointer mb-2.5" asChild>
         <Link href={"/signup"}>Create Account</Link>
       </Button>
       <Button
-        className="bg-[#6C25FF4B] hover:bg-[#6C25FF4B]/90 cursor-pointer h-[2.875rem]"
-        variant="outline"
+        className="bg-[#6C25FF4B] hover:bg-[#6C25FF4B]/90 cursor-pointer text-[#1D2226]"
+        asChild
       >
         <Link href={"/signin"}>Already Registered? Login</Link>
       </Button>
