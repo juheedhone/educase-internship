@@ -1,12 +1,12 @@
-import AccountSettings from "@/components/AccountSettings";
+import Welcome from "@/components/Welcome";
 
 const page = () => {
   return (
     <>
       {/* <SignIn /> */}
       {/* <SignUp/> */}
-      <AccountSettings />
-      {/* <Welcome /> */}
+      {/* <AccountSettings /> */}
+      <Welcome />
     </>
   );
 };

@@ -43,7 +43,7 @@ const SignIn = () => {
 
   return (
     <div className="p-6">
-      <div className="font-semibold text-2xl mb-5 text-[#1D2226] max-w-47">
+      <div className="mb-5 text-2xl font-semibold max-w-47">
         Create to your PopX account
       </div>
 
@@ -53,7 +53,7 @@ const SignIn = () => {
             control={form.control}
             name="fullname"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
+              <FormItem className="relative mb-6 group">
                 <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
                   Full Name
                 </FormLabel>
@@ -67,7 +67,7 @@ const SignIn = () => {
             control={form.control}
             name="phone"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
+              <FormItem className="relative mb-6 group">
                 <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
                   Phone number
                 </FormLabel>
@@ -81,7 +81,7 @@ const SignIn = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
+              <FormItem className="relative mb-6 group">
                 <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
                   Email address
                 </FormLabel>
@@ -95,7 +95,7 @@ const SignIn = () => {
             control={form.control}
             name="password"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
+              <FormItem className="relative mb-6 group">
                 <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
                   Password
                 </FormLabel>
@@ -109,7 +109,7 @@ const SignIn = () => {
             control={form.control}
             name="companyName"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
+              <FormItem className="relative mb-6 group">
                 <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
                   Company name
                 </FormLabel>

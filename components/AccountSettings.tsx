@@ -4,7 +4,7 @@ import userImage from "../app/user.png";
 
 const AccountSettings = () => {
   return (
-    <div className="bg-[#F7F8F9] h-screen flex flex-col gap-[30px] text-[#1D2226] [&>*:not(:first-child)]:px-4">
+    <div className="bg-[#F7F8F9]! h-screen flex flex-col gap-[30px] [&>*:not(:first-child)]:px-5 w-full">
       <div className="h-[4.25rem] flex bg-white items-center p-[0.9375rem]">
         <p className="text-lg">Account Settings</p>
       </div>
@@ -26,7 +26,7 @@ const AccountSettings = () => {
           />
         </div>
         <div>
-          <p className="text-[15px] mb-1.5">Marry Doe</p>
+          <p className="text-[15px] mb-1.5 font-medium">Marry Doe</p>
           <p className="text-sm">Marry@Gmail.Com</p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "./ui/button";
@@ -9,12 +10,14 @@ import { Input } from "./ui/input";
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
-  password: z.string().min(5).max(12),
+  password: z.string().min(5),
 });
 
 export type IFormSchema = z.infer<typeof formSchema>;
 
 const SignIn = () => {
+  const router = useRouter();
+
   const form = useForm<IFormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -27,11 +30,12 @@ const SignIn = () => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
+    router.push("/account");
   }
 
   return (
-    <div className="p-6">
-      <div className="font-semibold text-2xl mb-3.5 text-[#1D2226] max-w-47">
+    <div className="w-full px-5 py-10">
+      <div className="font-semibold text-2xl mb-3.5 max-w-47">
         Signin to your PopX account
       </div>
       <p className="mb-6 opacity-60 max-w-58">
@@ -43,8 +47,8 @@ const SignIn = () => {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
-                <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
+              <FormItem className="relative mb-6 group">
+                <FormLabel className="text-[#6C25FF] bg-background  absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
                   Email Address
                 </FormLabel>
                 <FormControl>
@@ -61,9 +65,9 @@ const SignIn = () => {
             control={form.control}
             name="password"
             render={({ field }) => (
-              <FormItem className="group relative mb-6">
-                <FormLabel className="bg-background text-[#6C25FF]  absolute start-1 top-0 z-10 block -translate-y-1/2 px-2 text-xs font-medium group-has-disabled:opacity-50">
-                  password
+              <FormItem className="relative mb-6 group">
+                <FormLabel className="text-[#6C25FF] bg-background absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
+                  Password
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -75,7 +79,11 @@ const SignIn = () => {
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full bg-[#CBCBCB]">
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={!form.formState.isValid}
+          >
             Submit
           </Button>
         </form>
