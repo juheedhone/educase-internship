@@ -35,10 +35,10 @@ const SignIn = () => {
 
   return (
     <div className="w-full px-5 py-10">
-      <div className="font-semibold text-2xl mb-3.5 max-w-47">
+      <p className="font-medium text-[1.75rem] mb-3.5 max-w-48">
         Signin to your PopX account
-      </div>
-      <p className="mb-6 opacity-60 max-w-58">
+      </p>
+      <p className="mb-6 text-lg opacity-60 max-w-58">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
       </p>
       <Form {...form}>
@@ -48,7 +48,7 @@ const SignIn = () => {
             name="email"
             render={({ field }) => (
               <FormItem className="relative mb-6 group">
-                <FormLabel className="text-[#6C25FF] bg-background  absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
+                <FormLabel className="text-primary bg-background  absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
                   Email Address
                 </FormLabel>
                 <FormControl>
@@ -66,7 +66,7 @@ const SignIn = () => {
             name="password"
             render={({ field }) => (
               <FormItem className="relative mb-6 group">
-                <FormLabel className="text-[#6C25FF] bg-background absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
+                <FormLabel className="text-primary bg-background absolute start-1 top-0 z-10 block -translate-y-1/2 pl-0.5 pr-1 text-xs font-medium group-has-disabled:opacity-50">
                   Password
                 </FormLabel>
                 <FormControl>
@@ -81,10 +81,10 @@ const SignIn = () => {
           />
           <Button
             type="submit"
-            className="w-full"
+            className="w-full disabled:bg-[#CBCBCB]!"
             disabled={!form.formState.isValid}
           >
-            Submit
+            Login
           </Button>
         </form>
       </Form>
